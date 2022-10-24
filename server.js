@@ -1,9 +1,9 @@
 const express = require('express');
 const socketIO = require('socket.io');
-const https = require("https");
+const http = require("http");
 const app = express();
 require('dotenv').config();
-const server = https.createServer(app);
+const server = http.createServer(app);
 server.listen(3000);
 //for accept client origin else cors error
 const io = socketIO(server,{
@@ -45,4 +45,4 @@ app.get('/',(req,res)=>{
     res.send(`Socket connected`);
 })
 
-console.log(`app is running on https://localhost:3000`);
+console.log(`app is running on http://localhost:3000`);
