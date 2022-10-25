@@ -4,7 +4,7 @@ const http = require("http");
 const app = express();
 require('dotenv').config();
 const server = http.createServer(app);
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
 //for accept client origin else cors error
 const io = socketIO(server,{
     cors:{
